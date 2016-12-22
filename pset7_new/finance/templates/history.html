@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('history') }}" method="post">
+        <fieldset>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Symbol </th>
+                        <th>Name </th>
+                        <th>Shares </th>
+                        <th>Price </th>
+                        <th>Transaction Date </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in records %}
+                    <tr>
+                        <td> {{ record.symbol }} </td>
+                        <td> {{ record.Name }} </td>
+                        <td> {{ record.qty }} </td>
+                        <td> {{ record.price_paid }} </td>
+                        <td> {{ record.date_time }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+{% endblock %}

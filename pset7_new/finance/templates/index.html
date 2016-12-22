@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('index') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <b style="font-size:25px">Welcome back, {{ userid }}!</b>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Symbol </th>
+                        <th>Name </th>
+                        <th>Shares </th>
+                        <th>Price (per unit share) </th>
+                        <th>Total </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for share in shares %}
+                        <tr>
+                            {% if share.qtyOnHand != 0 %}
+                            <td> {{ share.symbol or "NA" }}</td>
+                            <td> {{ share.name or "NA" }}</td>
+                            <td> {{ share.qtyOnHand or "NA" }}</td>
+                            <td> {{ share.price or "NA" }}</td>
+                            <td> {{ share.totalPrice or "NA" }}</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                        <tr>
+                            <td> CASH </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> {{ cash_in_hand }} </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> <b>{{ total }}</b> </td>
+                        </tr>
+                </tbody>
+            </table>
+            <!--{{ shares}}
+            {{ q }} -->
+        </fieldset>
+    </form>
+{% endblock %}

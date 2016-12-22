@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('forgotPass') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control" name="email" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="form-control" >Request password </button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

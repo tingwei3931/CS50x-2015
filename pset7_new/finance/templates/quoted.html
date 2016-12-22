@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quotes Queried
+{% endblock %}
+ 
+{% block main %}
+   <fieldset>
+         <div class="form-group">
+             A share of {{quote.name}} {{quote.symbol}} costs {{quote.price}}.
+         </div>   
+    </fieldset>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Success
+{% endblock %}
+
+{% block main %}
+    <b style="font-size:30px">Registration Successful. You may login now.</b>
+    <button class="btn btn-default"><a href="{{ url_for('login') }}">Back To Login</a></button>
+{% endblock %}

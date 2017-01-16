@@ -8,5 +8,6 @@ Future add-ons include:
 * implementing the forgot password functionality
 * integrating flask-mail into forgot password 
 * visualize stock data using pyGal
+* (possibly) stock analysis and prediction using Machine Learning
 
 For more info on CS50 Introduction to Computer Science, visit https://www.edx.org/course/introduction-computer-science-harvardx-cs50x.

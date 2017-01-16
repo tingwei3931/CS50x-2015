@@ -1,7 +1,7 @@
 # cs50-pset7
 My take on pset7 from MOOC CS50 course.
 
-This problem set is about designing a website as a share trading platform via the api from yahoo.finance.com. I implemented several functionalites
+This problem set is about designing a website as a share trading platform via the API from yahoo.finance.com. I implemented several functionalites
 like buying, selling, getting quotes and display the portfolio by building on top of the code distributed. 
 
 Future add-ons include:

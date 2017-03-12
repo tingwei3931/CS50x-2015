@@ -1,0 +1,30 @@
+
+0.What is pneumonoultramicroscopicsilicovolcanoconiosis?
+  An obscure term obstensibly referring to a lung disease caused by silica dust,   someimes cited as the one of the longest words in english language.
+
+1. According to its man page, what does getrusage do?
+   Get resource usage  
+
+2. Per that same man page, how many members are in a variable of type struct rusage?
+   16 
+
+3. Why do you think we pass before and after by reference (instead of by value) to  
+ calculate, even though we’re not changing their contents?
+Because rusage is a large struct, it may be very costly in terms of computational resources to pass by value so it ends up easier by passing a pointer. 
+
+4. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+Main is reading words in the file by reading each individual character till the end of file. It starts by appending a characters to a word until it reaches the NULL character, which signifies a new word, and then prepares for a new word. If there are numbers in the word, the spell checker ignores it and prepares for a new word. 
+
+5.Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+Using fgetc to reach each words' characters allows us to ignore words with numbers. If we use scanf to get whole words at a time, we wont have a way to filter words with numbers.
+
+6. Why do you think we declared the parameters for check and load as const?
+Because the control flow of speller prints out the mispelled words, we dont want to change the actual strings we pass into the function.  
+
+7. I used a hash table to implement my spell checker. It is a hash table with a finitely large index to minimize collision. New words are placed into nodes. The hash function indicates which index should the word be inserted into and then the node at the node points to another new node. To avoid collisions, i have utilized a linked-list to linked the words together that are indexed into the same slot in the array. 
+
+8. My code started of having a run time of 'n' because all the elements were being placed in the same place of the array.  
+
+9. I have experimented with different hash functions and finally settled on hash functions on variable-length data. I have also increase the array size to maximize the speed. 
+
+10.The checks are still not fast enough. I would like to experiment in more hash functions to find out the ideal hash function that produces the least running time.  

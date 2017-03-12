@@ -1,0 +1,61 @@
+0. How many different colors does each format support?
+Png => 16.7 million colors, 
+JPEG => 16.7 million colors,
+GIF => 256 colors,
+BMP => 16.7 million colors
+
+1.  Which of the formats supports animation?
+GIF is the only format that supports animation.
+
+2.  What is the difference between lossy and lossless compressions?
+As you compress and decompress a certain format of files repeatedly, files will gradually lose quality, this is called lossy compression.
+In loseless compression, quality remains the same regardless the number of times the file has been compressed and decompressed.
+
+3.  Which of these formats is lossy-compressed?
+JPEGs are lossy-compressed.
+
+4. What happens, technically speaking, when a file is deleted on a FAT file system? 
+When a file is deleted in FAT system, metadata that is pointed to that file is rewritten while disk blocks containing the file's content are still there.
+
+5.  What can someone like you do to ensure(with high probability) that files that you delete cannot be recovered?
+I would use a data destruction software that would over-write the disk so many times that it would be nearly impossible to recover data.
+
+6.  What’s stdint.h?
+<stdint.h> is a header file located in the C standard library which "allows programmers to write more portable codes by providing a set of typedefs,"
+that narrow down specific typedefs in exact-integer types.
+
+7.  What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?These are predefined signed TYPES for specific number usage.
+
+8.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively? (Assume a 32-bit architecture like the CS50 Appliance.)
+BYTE => 8bit, 
+DWORD => 32bit, 
+LONG => 32-bit, 
+WORD => 16-bit
+
+9.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? (Leading bytes used to identify file formats (with high probability) are generally called "magic numbers.)"
+Signature letters BM with hex value (0x42 0x4D)
+
+10. What’s the difference between bfSize and biSize?
+bfSize is the bitmap size in bytes and biSize is the header size which must at least 40 bytes
+
+11. What does it mean if biHeight is negative?
+A negative value for biHeight occurs when pixel data is ordered from the top-down
+
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+The biBitCount field specifies the BMP's color depth.
+
+13. Why might fopen return NULL in copy.c:37?
+Fopen may return NULL value when file is too large and there is not enough space or user is not authorized to create file
+
+14. Why is the third argument to fread always 1 in our code?
+The third argument to fread takes in the size of the bitmapfile header and each bitmap image comes with only one header.
+
+15. What value does copy.c:70 assign padding if bi.biWidth is 3?
+It returns a value of 1 
+
+16.What does fseek do?
+The fseek() function is used to change the file position indicator of the stream
+
+17. What is SEEK_CUR?
+Used as an argument for fseek(); shows the position of the position pointer
+18. Rob Bowden 
